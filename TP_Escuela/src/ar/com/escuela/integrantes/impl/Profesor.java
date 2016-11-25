@@ -1,0 +1,42 @@
+package ar.com.escuela.integrantes.impl;
+
+import ar.com.escuela.elementos.Materia;
+import ar.com.escuela.integrantes.Imprimible;
+import ar.com.escuela.integrantes.IntegrantesEscuela;
+
+public class Profesor extends IntegrantesEscuela implements Imprimible{
+	
+	private Materia materiaDictada;
+	
+
+	public Profesor(String nombre, String apellido, String DNI, int edad, Materia materia) {
+		
+		super(nombre, apellido, DNI, edad);
+		this.materiaDictada = materia;		
+
+	}
+
+	public Materia getMateriaDictada() {
+		return materiaDictada;
+	}
+
+	public void setMateriaDictada(Materia materiaDictada) {
+		this.materiaDictada = materiaDictada;
+	}
+	
+	@Override
+	public void imprimirInformacion() {
+		
+		System.out.println("Información del Profesor: \n"
+				+ "Apellido: " + super.getApellido() + "\n"
+				+ "Nombre: " + super.getNombre() + "\n"
+				+ "DNI: " + super.getDNI() + "\n"
+				+ "Edad: " + super.getEdad()+ "\n"				
+				+ "Profesor de la siguiente " + this.getMateriaDictada().toString()
+				+ "\n"
+			
+		);
+		
+	}
+	
+}
