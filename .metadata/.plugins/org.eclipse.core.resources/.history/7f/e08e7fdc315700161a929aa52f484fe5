@@ -1,0 +1,31 @@
+package com.hackerRank.codeDays;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("hola desde java");
+		
+		Map<String, Integer> phone = new HashMap<String,Integer>();
+		phone.put("hola", 2);
+		
+		if (phone.containsKey("holas")) {
+			
+			System.out.println(phone);
+			System.out.println(phone.keySet());
+			System.out.println(phone.get("hola"));
+			
+			
+		} else {
+			
+			System.out.println("holas no esta en el mapa");
+			
+		}
+
+	}
+
+}

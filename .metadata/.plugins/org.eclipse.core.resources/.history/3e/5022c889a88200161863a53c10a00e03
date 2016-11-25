@@ -1,0 +1,14 @@
+package ar.com.java.constructors;
+
+public class ConstructorsTest {
+	
+	public static void main(String[] args) {
+		
+		
+		Constructors constructors2 = new Constructors("param1", "param2");
+		Constructors constructors1 = new Constructors("paramN");
+		
+		
+	}
+
+}

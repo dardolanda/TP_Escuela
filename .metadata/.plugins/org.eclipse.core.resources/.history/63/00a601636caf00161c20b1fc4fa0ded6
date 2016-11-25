@@ -1,0 +1,10 @@
+package ar.com.escuela.elementos;
+
+public class Materia {
+	
+	String nombre;
+	String 
+	String horario;
+	
+
+}

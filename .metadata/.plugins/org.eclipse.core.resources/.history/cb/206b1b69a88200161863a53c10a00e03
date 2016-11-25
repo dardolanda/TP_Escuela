@@ -1,0 +1,11 @@
+package ar.com.java.constructors;
+
+public class Constructors {
+	
+	
+	
+	public Constructors(String arg1, String arg2) {
+		
+	}
+
+}

@@ -1,0 +1,25 @@
+package ar.com.java.constructors;
+
+public class ConstructorsTest {
+	
+	public static void main(String[] args) {
+		
+		
+		Constructors constructors2 = new Constructors("param1", "param2");
+		Constructors constructors1 = new Constructors("paramN");
+		
+//		System.out.println(constructors1.toString());
+//		System.out.println(constructors2.toString());
+		
+		
+		int i = 3;
+		int a = 7;
+		
+		System.out.println(i/a);
+		
+		
+		
+		
+	}
+
+}

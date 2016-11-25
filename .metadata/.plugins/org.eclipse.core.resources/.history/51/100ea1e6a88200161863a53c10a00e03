@@ -1,0 +1,27 @@
+package ar.com.java.constructors;
+
+public class Constructors {
+	
+	String param1;
+	String param2;
+	
+	public Constructors(String arg1, String arg2) {
+		
+		this.param1 = arg1;
+		this.param2 = arg2;
+		
+	}
+	
+	public Constructors(String argN){
+		this(argN, null);
+	}
+	
+	public String toString() {
+		
+		
+		return this.param1 + this.param2;
+		
+		
+	}
+
+}

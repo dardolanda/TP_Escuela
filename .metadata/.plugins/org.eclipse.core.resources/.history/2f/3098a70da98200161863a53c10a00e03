@@ -1,0 +1,36 @@
+package ar.com.java.constructors;
+
+public class Constructors {
+	
+	String param1;
+	String param2;
+	
+	public Constructors(String arg1, String arg2) {
+		
+		this.param1 = arg1;
+		this.param2 = arg2;
+		
+	}
+	
+	public Constructors(String argN){
+		this(argN, null);
+	}
+	
+	public String toString() {
+		
+		/*
+		 * Queda pendiente poder recorrer todos los 
+		 * constructores, e imprimir hasta que no 
+		 * tenga mas parámetros, ya que tenemos 
+		 * 2 tipos de constructores diferentes:
+		 * 1º con 2 parámetros
+		 * 2º con 1 parámetro.
+		 * 
+		 * */
+		
+		return this.param1 + this.param2;
+		
+		
+	}
+
+}

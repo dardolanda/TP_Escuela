@@ -1,0 +1,29 @@
+package com.hackerRank.codeDays;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Map<String, Integer> phone = new HashMap<String,Integer>();
+		phone.put("hola", 99);
+		
+		System.out.println(Integer.toBinaryString(20));
+		
+		if (phone.containsKey("hola")) {
+
+			
+			System.out.println(phone.get("hola"));
+			
+			
+		} else {
+			
+			System.out.println("holas no esta en el mapa");
+			
+		}
+
+	}
+
+}

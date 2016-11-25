@@ -1,0 +1,99 @@
+package ar.com.escuela.integrantes.impl;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import ar.com.escuela.elementos.Materia;
+import ar.com.escuela.integrantes.Imprimible;
+import ar.com.escuela.integrantes.IntegrantesEscuela;
+
+public class Alumno extends IntegrantesEscuela implements Imprimible {
+	
+	private String grado;
+	//private 
+	private Map<Materia, List<Integer>> listaDeNotaPorMateria;
+	private List<Integer> listaDeNotas;
+	
+	
+	public Alumno(String nombre, String apellido, String DNI, int edad, String grado) {
+		
+		super(nombre, apellido, DNI, edad);
+		this.grado = grado;				
+		listaDeNotaPorMateria = new HashMap<Materia, List<Integer>>();
+		
+	}
+
+
+	@Override
+	public void imprimirInformacion() {
+		
+		System.out.println("Información del alumno: \n"
+				+ "Nombre: " + super.getNombre() + "\n"
+				+ "Apellido: " + super.getApellido() + "\n"
+				+ "Edad: " + super.getEdad()+ "\n"
+				+ "DNI: " + super.getDNI() + "\n"
+				+ "Grado en que cursa: " + this.getGrado() + "\n"
+				+ "Materia que cursa y sus notas: ");
+		
+		this.displayMateriaYNotasCorrespondientes();
+		
+		
+	}
+
+
+	public String getGrado() {
+		return grado;
+	}
+
+
+	public void setGrado(String grado) {
+		this.grado = grado;
+	}
+
+
+	public Map<Materia, List<Integer>> getListaDeNotaPorMateria() {
+		return listaDeNotaPorMateria;
+	}
+
+
+	public void setListaDeNotaPorMateria(Map<Materia, List<Integer>> listaDeNotaPorMateria) {
+		this.listaDeNotaPorMateria = listaDeNotaPorMateria;
+	}
+	
+	public void agregarCalificacion(Materia materia, int notaDeMateria) {
+		
+		//TODO: queda arreglar que se tiene que crear un arrayList por cada materia creada.
+		
+		if(!this.listaDeNotaPorMateria.containsKey(materia)) {
+			
+			listaDeNotas = new ArrayList<Integer>();			
+			
+		}		
+		
+		
+		this.listaDeNotas.add(notaDeMateria);
+		this.listaDeNotaPorMateria.put(materia, listaDeNotas);
+						
+		
+	}
+	
+	private void displayMateriaYNotasCorrespondientes() {
+				
+		
+		for (Map.Entry<Materia, List<Integer>> entry : this.getListaDeNotaPorMateria().entrySet()) {
+			
+			System.out.println(entry.getKey().toString() + ". Notas: " + entry.getValue());
+			
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
+
+}

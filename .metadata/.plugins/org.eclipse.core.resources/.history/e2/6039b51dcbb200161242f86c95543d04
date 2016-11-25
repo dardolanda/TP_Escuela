@@ -1,0 +1,49 @@
+package ar.com.escuela.operaciones;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import ar.com.escuela.elementos.Materia;
+import ar.com.escuela.integrantes.IntegrantesEscuela;
+import ar.com.escuela.integrantes.impl.Alumno;
+
+public class Calculador {
+	
+	
+	public double calcularPromedio(IntegrantesEscuela alumno) {
+		
+		List<Double> listaDeNotasTotales = new ArrayList<Double>();
+		((Alumno)alumno).getListaDeNotaPorMateria().keySet().size();
+		
+		for (Map.Entry<Materia, List<Integer>> entry : ((Alumno)alumno).getListaDeNotaPorMateria().entrySet()) {
+			
+			int acumuladorDeNotasParciales = 0;
+								
+			for (int nota : entry.getValue()) {
+				
+				acumuladorDeNotasParciales +=nota;
+				
+			}
+			
+			listaDeNotasTotales.add((double)acumuladorDeNotasParciales/entry.getValue().size());
+			
+			
+		}
+		
+		
+		double sumatoriaDeNotasParciales = 0.0;
+		for(double notaPromedioParcial : listaDeNotasTotales) {
+			
+			sumatoriaDeNotasParciales += notaPromedioParcial;
+			
+			
+		}
+		
+		return sumatoriaDeNotasParciales/listaDeNotasTotales.size();
+		
+		
+	}
+				
+
+}
